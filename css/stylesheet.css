@@ -1,0 +1,784 @@
+body {
+    font-family: 'Lato', Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: rgba(0, 37, 0, 0.9); /* Adjust the alpha (opacity) value as needed */
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 0 0 15px 15px; /* Rounded corners for the bottom */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4); /* Add shadow effect */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; /* Apply thinner font weight */
+    padding: 10px 0px ; /* Reduce padding for a narrower header */
+}
+
+.logo img {
+    width: 200px; /* Reduce logo size */
+    height: auto;
+    filter: invert(100%); 
+    margin-left: 30px; 
+}
+
+.logo:hover {
+    animation: blink 0.9s ease-in-out; /* Apply the blink animation */
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0; /* Start and end state: fully transparent */
+    }
+    50% {
+        opacity: 1; /* Middle state: fully opaque */
+    }
+}
+
+nav {
+    margin-left: auto; /* Push navigation items to the right */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox to arrange items */
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px; /* Reduce margin between navigation items */
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px; /* Reduce font size */
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; /* Apply thinner font weight */
+}
+
+nav ul li a:hover {
+    color: #83B692; /* Change color on hover */
+}
+
+nav ul li a.active {
+    color: #E08D79; /* Set the color for the active navigation item */
+}
+
+@media screen and (max-width: 768px) {
+    nav ul li a {
+        font-size: 14px; /* Decrease font size further for smaller screens */
+    }
+}
+
+.language-dropdown {
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;
+    z-index: 2000; /* Ensure the dropdown is above other content */
+}
+
+.language-dropdown:focus .language-options {
+    display: block;
+}
+
+.language-dropdown .language-text {
+    padding: 5px 10px; /* Reduce padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #E08D79; /* Set the text color */
+    margin-right: 10px; 
+    font-size: 12px; /* Reduce font size */
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; /* Apply thinner font weight */
+}
+
+.language-dropdown .language-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    z-index: 1000;    
+}
+
+.language-dropdown:hover .language-options {
+    display: block;
+}
+
+.language-options {
+    position: absolute;
+    top: calc(100% + 50px); /* Adjust the distance from the trigger */
+    left: 0;
+    display: none;
+    /* Other styling properties */
+}
+
+.language-options li {
+    list-style: none;
+}
+
+.language-options li a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; /* Apply thinner font weight */
+    font-size: 12px; /* Reduce font size */
+}
+
+.language-options li a:hover {
+    background-color: #f0f0f0;
+}
+
+@media screen and (max-width: 900px) {
+    header .logo img {
+        width: 150px; /* Adjust logo size for smaller screens */
+    }
+
+    header nav ul li a {
+        font-size: 14px; /* Decrease font size for navigation links */
+    }
+
+    .language-dropdown .language-text {
+        font-size: 12px; /* Decrease font size for language dropdown text */
+    }
+
+    .language-options li a {
+        font-size: 12px; /* Decrease font size for language options */
+    }
+}
+
+
+.cover {
+    position: relative;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+    margin-top: 20%; /* Add margin to lower the cover */
+    margin-bottom: 10%;    
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+}
+.cover img {
+    max-width: 60%; /* Ensure the image does not exceed the cover width */
+    max-height: 60%; /* Ensure the image does not exceed the cover height */
+    object-fit: contain; /* Maintain aspect ratio while fitting within the cover */
+}
+
+
+.intro {
+    text-align: justify;
+    padding: 100px 0;
+    background-color: #fff;
+}
+.intro-content p {
+    text-align: justify;
+    margin-bottom: 2px; /* Adjust the value as needed */
+    color: #36453B; /* Color for the text */
+    font-size: 16px; /* Font size for the text */
+    line-height: 1.6; /* Line height for better readability */
+}
+.intro .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 75%;
+    margin: 0 auto;
+}
+.text-image {
+    flex: 1;
+    text-align: center;
+}
+.text-image img {
+    width: 200px; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 10px; /* Add margin to separate from text */
+}
+
+
+.projects {
+    padding: 50px 0;
+    margin-bottom: -250px;
+}
+.project-header {
+    text-align: center; /* Center the image */
+    margin-bottom: 20px; /* Add space below the header */
+}
+.project-header img {
+    max-width: 20%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+}
+.project-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Add spacing between the images and the header */
+}
+.project {
+    position: relative;
+    width: calc(33.333% - 20px); /* Adjust width and spacing */
+    margin-right: 20px; /* Add space between the images */
+}
+.project-image {
+    width: 100%; /* Set a fixed width for the project images */
+    height: 50%; /* Set a fixed height for the project images */
+    border-radius: 8px;
+    transition: filter 0.5s; /* Smooth transition for filter effect */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
+.project-name {
+    position: absolute;
+    bottom: 70%; /* Adjust as needed */
+    left: 15%;
+    right: 15%;
+    text-align: center; /* Center text horizontally */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially transparent */
+    transition: opacity 0.5s, visibility 0s linear 0.5s; /* Smooth transition for opacity */
+}
+.project:hover .project-name {
+    visibility: visible; /* Show project name on hover */
+    opacity: 1; /* Set opacity to 1 on hover */
+    transition: opacity 0.7s, visibility 0s; /* Smooth transition for opacity and visibility */
+}
+
+
+.contact-header {
+    text-align: center; /* Center the image */
+    margin-bottom: 20px; /* Add space below the header */
+}
+.contact-header img {
+    max-width: 12%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+}
+.contact-container {
+    background-color: #002500; /* Set background color */
+    border-radius: 15px; /* Add rounded corners */
+    padding: 20px; /* Add padding for content */
+    color: #fff; /* Set text color to white */
+    max-width: 25%; /* Limit width to prevent stretching */
+    margin: 0 auto; /* Center the container */
+    margin-top: 50px; /* Adjust margin as needed */
+    margin-bottom: 100px;
+}
+.contact-content {
+    text-align: center; /* Center the content */
+}
+.contact-content h2 {
+    margin-bottom: 20px; /* Add margin below the heading */
+}
+
+footer {
+    background-color: rgba(131, 182, 146, 0.6); /* Adjust the alpha (opacity) value as needed */
+    color: #fff;
+    padding: 0px 5px; /* Increase the padding to make the footer taller */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-top: auto;
+    text-align: right;
+    font-size: 12px;
+    font-family: 'Lato', sans-serif; /* Apply Lato font */
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-column h3 {
+    color: #E08D79;
+    font-size: 16px;
+    margin-bottom: 0px; 
+}
+
+.footer-column p,
+.footer-column ul {
+    color: #fff;
+    font-size: 14px;
+    list-style: none;
+    padding: 0;
+    margin-top: 0px;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+    color: #fff; /* Set the color for all links */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-column ul li a:hover {
+    color: #002500; /* Add underline on hover */
+}
+
+.social {
+    margin-top: 5px; /* Adjust spacing as needed */
+    margin-left: 10px;
+}
+
+.social a {
+    display: inline-block; /* Ensures the anchor tags behave like blocks */
+}
+
+.social img.social-icon {
+    width: 40px; /* Set the width of the images */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust spacing between icons */
+}
+
+footer .copyright {
+    margin-top: -20px; /* Adjust margin-top to move the copyright text higher */
+}
+
+
+.rounded-image {
+  width: 180px; /* Adjust width as needed */
+    height: 210px; /* Adjust height to maintain aspect ratio */
+    border-radius: 50%; /* Make the shape round */
+    margin-left: 20px; /* Add space between the image and text */
+    box-shadow: 0 0 0 4px rgba(224, 141, 121, 1); /* Outline shadow with the color E08D79 */
+    top: 50px; /* Adjust as needed to move the image higher */
+    background-image: url(Profil-Bild.JPG); /* Set the image as background */
+    background-size: cover; /* Cover the entire element */
+    background-position: center; /* Center the image */
+}
+
+.about-me-section {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    margin-top: 20%; /* Adjust as needed */
+    margin-bottom: 5%; /* Adjust as needed */
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.about-me-details {
+    flex: 1; /* Take up remaining space */
+    margin-left: 20px; /* Add space between the image and text */
+    position: relative;
+}
+.about-me-content {
+    text-align: justify;
+    color: #36453B; /* Color for the text */
+    font-size: 16px; /* Font size for the text */
+    line-height: 1.6; /* Line height for better readability */
+}
+
+.background-section {
+    padding-top: 5px;
+    padding-bottom: 0px;
+    max-width: 95%;
+    background-color: #f9f9f9;
+    text-align: justify;
+    margin: 0 auto; /* Center the section horizontally */
+    margin-bottom: 15%;
+    border-radius: 15px; /* Add rounded corners */
+    overflow: hidden; /* Ensure content doesn't overflow rounded corners */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Box shadow */
+}
+.background-section .container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+.background-section h2 {
+    text-align: center;
+    color: #002500; /* Adjust heading color */
+}
+.background-section p {
+    color: #36453B; /* Color for the text */
+    font-size: 16px; /* Font size for the text */
+    line-height: 1.6; /* Line height for better readability */
+}
+
+.akademische-section {
+    text-align: justify;
+    margin-top: -100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px; /* Adjust the value as needed */
+    color: #36453B; /* Color for the text */
+    font-size: 18px; /* Font size for the text */
+    line-height: 1.6; /* Line height for better readability */
+}
+.akademische-section h2 {
+    text-align: center;
+    font-size: 22px; 
+    color: #002500; /* Adjust heading color */
+}
+
+.akademische-section p {
+    text-align: justify;
+    font-size: 16px; 
+    color: #36453B; /* Adjust heading color */
+}
+
+.akademische-section a {
+    color: #83B692;
+    text-decoration: none;
+}
+
+.akademische-section a:hover {
+    color: #E08D79; /* Color when hovered over */
+}
+
+
+.freizeit-section {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    max-width: 95%;
+    background-color: #f9f9f9;
+    text-align: justify;
+    margin: 0 auto; /* Center the section horizontally */
+    margin-bottom: 5%;
+    border-radius: 15px; /* Add rounded corners */
+    overflow: hidden; /* Ensure content doesn't overflow rounded corners */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Box shadow */
+}
+.freizeit-section .container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+.freizeit-section h2 {
+    text-align: center;
+    color: #002500; /* Adjust heading color */
+}
+.freizeit-section p {
+    color: #36453B; /* Color for the text */
+    font-size: 16px; /* Font size for the text */
+    line-height: 1.6; /* Line height for better readability */
+}
+
+
+.Description-Angebot {
+    margin-top: 200px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+.Description-Angebot p {
+    color: #36453B; /* Color for the text */
+    text-align: center;
+    font-size: 16px; /* Font size for the text */
+    line-height: 1.6; /* Line height for better readability */
+}
+.Description-Angebot a {
+    color: #83B692;
+    text-decoration: none;
+}
+
+.Description-Angebot a:hover {
+    color: #E08D79; /* Color when hovered over */
+}
+
+.square-line {
+    display: flex;
+    justify-content: center; /* Center squares horizontally */
+}
+.square {
+    width: 350px;
+    height: 450px;
+    margin: 20px 20px 100px; 
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Box shadow */
+}
+
+.square h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #E08D79;
+}
+
+.vertical-line {
+position: absolute;
+    top: 25%;
+    bottom: 5%;
+    left: 50%;
+    border-left: 1px solid #E08D79; /* Updated color */
+}
+
+.text-left {
+    position: absolute;
+    top: 50%;
+    width: calc(50% - 20px); /* Adjust the width */
+    transform: translateY(-50%);
+    padding: 0 10px;
+    left: 0px; /* Adjust the left position */
+    color: #36453B;
+    text-align: left;
+}
+.text-left {
+    left: -10;
+}
+.text-right {
+    position: absolute;
+    margin-top: 30px;
+    top: 50%;
+    width: calc(50% - 20px); /* Adjust the width */
+    transform: translateY(-50%);
+    padding: 0 10px;
+    right: 10px; /* Adjust the right position */
+    color: #36453B;
+    text-align: left;
+}
+
+.text-left ul,
+.text-right ul {
+    list-style-type: disc; /* Use bullet points */
+    margin-left: -10px; /* Add some margin for indentation */
+}
+.text-left li,
+.text-right li {
+    margin-bottom: 10px; /* Add some space between bullet points */
+}
+
+
+.content_project {
+    padding-top: 200px ; /* Adjust padding as needed */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+.project-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow projects to wrap to the next line */
+    justify-content: center; /* Center projects horizontally */
+}
+.image-container {
+    display: flex;
+    justify-content: space-between; /* Adjust alignment as needed */
+}
+.squared-image {
+    width: 200px; /* Set the width */
+    height: 200px; /* Set the height */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    object-position: center top;
+    border-radius: 8px; /* Add rounded corners if needed */
+    position: relative; /* Enable positioning */
+    z-index: 1; /* Ensure images appear above project info */
+}
+.project-page {
+    width: 100%; /* Adjust width and spacing */
+    margin-bottom: 10%; /* Add space between projects */
+    display: flex; /* Use flexbox to position image and info */
+    flex-direction: column; /* Stack image and info vertically */
+    align-items: center; /* Center image and info horizontally */
+    position: relative;
+    
+}
+.project-info {
+    background-color: #fff; /* Background color for project info */
+    padding: 20px; /* Add padding around project info */
+    border-radius: 8px; /* Add rounded corners to project info */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    opacity: 1;
+    width: 70%; /* Take full width of parent */
+    text-align: center; /* Center text */
+    margin-top: -20px; /* Add top margin */
+    
+}
+.project-info h2 {
+    color: #002500; /* Set the color of the project title */
+}
+
+.project-info p {
+    color: #36453B
+}
+
+.content-game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px; /* Adjust margin as needed */
+    margin-bottom: 0px; /* Adjust margin as needed */
+}
+.game-info {
+    flex: 1;
+    padding: 20px;
+}
+.game-info h2 {
+    color: #002500; /* Adjust heading color */
+    text-align: center;
+}
+.game-info p {
+    color: #36453B; /* Adjust text color */
+    text-align: justify;
+}
+.game-image {
+    flex: 1;
+    padding: 70px;
+}
+.game-image img {
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+
+.timeline-wrapper {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  height: 300px;
+    margin-bottom: 120px; 
+}
+.timeline-wrapper .middle-line {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #E08D79; /* Match the color of your website */
+}
+.arrow {
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent; /* Adjust the size of the arrow */
+  border-bottom: 15px solid transparent; /* Adjust the size of the arrow */
+  border-left: 15px solid #E08D79; /* Adjust the color of the arrow */
+    
+}
+.box {
+  width: 17%;
+  position: relative;
+  min-height: 300px;
+  float: right;
+}
+.box .date {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: #83B692;
+  border: 2px solid #fff; /* Match the color of your website */
+}
+.date p {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: -10px;
+  color: #fff; /* Match the color of your website */
+}
+.box .box-content {
+  border-radius: 5px;
+  background-color: #E08D79; /* Match the color of your website */
+  width: 180px;
+  position: absolute;
+  left: -77px;
+  padding: 15px;
+}
+.box-content p {
+  margin: auto;
+  color: #fff; /* Match the text color of your website */
+    text-align: center;
+}
+.box-bottom .box-content {
+  top: 65%;
+}
+.box-content::before {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+}
+.box-bottom .box-content::before {
+  border-bottom-color: #E08D79; /* Match the color of your website */
+  top: -20px;
+}
+.box-top .box-content::before {
+  border-top-color: #E08D79; /* Match the color of your website */
+  bottom: -20px;
+}
+.construction-image {
+    max-width: 500px; /* Adjust the maximum width as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is displayed as a block element */
+    margin: 0 auto; /* Center the image horizontally */
+    margin-top: 50px
+}
+
+
+.kontakt-header {
+    text-align: center; /* Center the image */
+    margin-top: 250px; 
+    margin-bottom: 20px; /* Add space below the header */
+}
+.kontakt-header img {
+    max-width: 12%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+}
+.kontakt-container {
+    background-color: #002500; /* Set background color */
+    border-radius: 15px; /* Add rounded corners */
+    padding: 20px; /* Add padding for content */
+    color: #fff; /* Set text color to white */
+    max-width: 25%; /* Limit width to prevent stretching */
+    margin: 0 auto; /* Center the container */
+    margin-top: 50px; /* Adjust margin as needed */
+    margin-bottom: 100px;
+    text-align: center;
+}
+.kontackt-content {
+    text-align: center
+}
+.kontakt-content h2 {
+    margin-bottom: 20px; /* Add margin below the heading */
+
+}
+
+.main-impressum {
+    padding-top: 250px; /* Adjust the value as needed */
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: justify;
+}
+
+
+.main-datenschutz {
+    padding-top: 250px; /* Adjust the value as needed */
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: justify;
+}
