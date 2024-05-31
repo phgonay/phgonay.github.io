@@ -293,7 +293,7 @@ nav ul li a.active {
 }
 
 footer {
-    background-color: rgba(131, 182, 146, 0.6); /* Adjust the alpha (opacity) value as needed */
+    background-color: #r83B692;
     color: #fff;
     padding: 0px 5px; /* Increase the padding to make the footer taller */
     border-top-left-radius: 5px;
